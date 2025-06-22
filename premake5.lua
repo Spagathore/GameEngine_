@@ -24,7 +24,7 @@ project "GameEngine_"
 		"%{prj.name}/src/**.cpp"
 	}
 
-	includedirs
+	sysincludedirs
 	{
 		"%{prj.name}/vendor/spdlog/include"
 	}
@@ -39,6 +39,23 @@ project "GameEngine_"
 			"GE_PLATFORM_WINDOWS",
 			"GE_BUILD_DLL"
 		}
+
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir .. "/Sandbox")
+		}
+
+	filter "system:macosx"
+		cppdialect "C++17"
+		systemversion "latest"
+
+		defines
+		{
+			"GE_PLATFORM_MACOS",
+			"GE_BUILD_DLL"
+		}
+
+		buildoptions { "-fvisibility=hidden" }
 
 		postbuildcommands
 		{
@@ -74,8 +91,12 @@ project "Sandbox"
 
 	includedirs
 	{
-		"GameEngine_/vendor/spdlog/include",
 		"GameEngine_/src"
+	}
+
+	sysincludedirs
+	{
+		"GameEngine_/vendor/spdlog/include"
 	}
 
 	links
@@ -91,6 +112,15 @@ project "Sandbox"
 		defines
 		{
 			"GE_PLATFORM_WINDOWS"
+		}
+
+	filter "system:macosx"
+		cppdialect "C++17"
+		systemversion "latest"
+
+		defines
+		{
+			"GE_PLATFORM_MACOS"
 		}
 
 	filter "configurations:Debug"
