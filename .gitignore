@@ -6,3 +6,4 @@ bin-int/
 # files
 
 *.user
+*.DS_Store
