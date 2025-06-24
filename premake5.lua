@@ -10,6 +10,13 @@ workspace "GameEngine_"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder { soltuion directories }
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "GameEngine_/vendor/GLFW/include"
+
+include "GameEngine_/vendor/GLFW"
+
 project "GameEngine_"
 	location "GameEngine_"
 	kind "SharedLib"
@@ -17,6 +24,9 @@ project "GameEngine_"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "ge_pch.h"
+	pchsource "GameEngine_/src/ge_pch.cpp"
 
 	files
 	{
@@ -26,12 +36,20 @@ project "GameEngine_"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -85,7 +103,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines

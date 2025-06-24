@@ -1,9 +1,7 @@
 #pragma once
 
 #include "GameEngine/Core.h"
-
-#include <string>
-#include <functional>
+#include "ge_pch.h"
 
 namespace GameEngine {
 
