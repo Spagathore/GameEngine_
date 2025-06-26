@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59FD84458BF6CEF705D60A85 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57590E0DADE6787F865F8C4D /* Log.cpp */; };
+		E525B7E9FFF2269B03C2BE29 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEE5A9714C0DB7E34DA0A7B1 /* Application.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B8245AB8CA4E69D426B93EB /* EntryPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EntryPoint.h; path = src/GameEngine/EntryPoint.h; sourceTree = "<group>"; };
+		4EC3A5E539AFCBD781959425 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Core.h; path = src/GameEngine/Core.h; sourceTree = "<group>"; };
+		57590E0DADE6787F865F8C4D /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/GameEngine/Log.cpp; sourceTree = "<group>"; };
+		6C0128BBB04FCE2DF27706FB /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Application.h; path = src/GameEngine/Application.h; sourceTree = "<group>"; };
+		816945D77ACF47496E6AA417 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Log.h; path = src/GameEngine/Log.h; sourceTree = "<group>"; };
+		8E869ED1BE186DC39925AD11 /* libGameEngine_.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; name = libGameEngine_.dylib; path = libGameEngine_.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE5A9714C0DB7E34DA0A7B1 /* Application.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Application.cpp; path = src/GameEngine/Application.cpp; sourceTree = "<group>"; };
+		FBF92F54446A13868908E594 /* GameEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameEngine.h; path = src/GameEngine.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		253FD3C1102BF9B35811C201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A4F186DA0DC82DF795596AD /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXGroup section */
+		17B18EA82EC429DA1EE024E8 /* GameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				DEE5A9714C0DB7E34DA0A7B1 /* Application.cpp */,
+				6C0128BBB04FCE2DF27706FB /* Application.h */,
+				4EC3A5E539AFCBD781959425 /* Core.h */,
+				1B8245AB8CA4E69D426B93EB /* EntryPoint.h */,
+				57590E0DADE6787F865F8C4D /* Log.cpp */,
+				816945D77ACF47496E6AA417 /* Log.h */,
+			);
+			name = GameEngine;
+			sourceTree = "<group>";
+		};
+		279D42CF91AFC4C12ADAB10F /* GameEngine_ */ = {
+			isa = PBXGroup;
+			children = (
+				FBF92F54446A13868908E594 /* GameEngine.h */,
+				17B18EA82EC429DA1EE024E8 /* GameEngine */,
+				A6C936B49B3FADE6EA134CF4 /* Products */,
+			);
+			name = GameEngine_;
+			sourceTree = "<group>";
+		};
+		A6C936B49B3FADE6EA134CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E869ED1BE186DC39925AD11 /* libGameEngine_.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C09D6097E8D81949D073A6D7 /* GameEngine_ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 137B1C20FE674212464D0A60 /* Build configuration list for PBXNativeTarget "GameEngine_" */;
+			buildPhases = (
+				9527546180137A53C7F942A1 /* Resources */,
+				FED46DB8E9C093AA31A65BF8 /* Sources */,
+				253FD3C1102BF9B35811C201 /* Frameworks */,
+				4A4F186DA0DC82DF795596AD /* Embed Libraries */,
+				9607AE3710C85E8F00CD1376 /* Postbuild */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameEngine_;
+			productName = GameEngine_;
+			productReference = 8E869ED1BE186DC39925AD11 /* libGameEngine_.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "GameEngine_" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 279D42CF91AFC4C12ADAB10F /* GameEngine_ */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C09D6097E8D81949D073A6D7 /* libGameEngine_.dylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9527546180137A53C7F942A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9607AE3710C85E8F00CD1376 /* Postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Postbuild;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\ncp -rf ../bin/Debug-macosx-x86_64/GameEngine_/libGameEngine_.dylib ../bin/Debug-macosx-x86_64/Sandbox\nfi\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\ncp -rf ../bin/Release-macosx-x86_64/GameEngine_/libGameEngine_.dylib ../bin/Release-macosx-x86_64/Sandbox\nfi\nif [ \"${CONFIGURATION}\" = \"Dist\" ]; then\ncp -rf ../bin/Dist-macosx-x86_64/GameEngine_/libGameEngine_.dylib ../bin/Dist-macosx-x86_64/Sandbox\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FED46DB8E9C093AA31A65BF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E525B7E9FFF2269B03C2BE29 /* Application.cpp in Sources */,
+				59FD84458BF6CEF705D60A85 /* Log.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		230A33AB51B0879DAAF1E1EB /* Dist */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GE_PLATFORM_MACOS,
+					GE_BUILD_DLL,
+					GE_DIST,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../bin-int/Dist-macosx-x86_64/GameEngine_";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-fvisibility=hidden",
+				);
+				SYMROOT = "../bin/Dist-macosx-x86_64/GameEngine_";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					vendor/spdlog/include,
+					"$(inherited)",
+				);
+			};
+			name = Dist;
+		};
+		46FC2DF8E9EA54AA79103438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GE_PLATFORM_MACOS,
+					GE_BUILD_DLL,
+					GE_RELEASE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../bin-int/Release-macosx-x86_64/GameEngine_";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-fvisibility=hidden",
+				);
+				SYMROOT = "../bin/Release-macosx-x86_64/GameEngine_";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					vendor/spdlog/include,
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		7149BD73A34308251D2243B3 /* Dist */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../bin/Dist-macosx-x86_64/GameEngine_";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = latest;
+				PRODUCT_NAME = GameEngine_;
+			};
+			name = Dist;
+		};
+		BCAA60E62DCD01D8E393AF26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../bin/Debug-macosx-x86_64/GameEngine_";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = latest;
+				PRODUCT_NAME = GameEngine_;
+			};
+			name = Debug;
+		};
+		BD504C3EC0C11E70422DC27E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					GE_PLATFORM_MACOS,
+					GE_BUILD_DLL,
+					GE_DEBUG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../bin-int/Debug-macosx-x86_64/GameEngine_";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-fvisibility=hidden",
+				);
+				SYMROOT = "../bin/Debug-macosx-x86_64/GameEngine_";
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					vendor/spdlog/include,
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D7894D601BD7F2D25DFF2BA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../bin/Release-macosx-x86_64/GameEngine_";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = latest;
+				PRODUCT_NAME = GameEngine_;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		137B1C20FE674212464D0A60 /* Build configuration list for PBXNativeTarget "libGameEngine_.dylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCAA60E62DCD01D8E393AF26 /* Debug */,
+				D7894D601BD7F2D25DFF2BA0 /* Release */,
+				7149BD73A34308251D2243B3 /* Dist */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "GameEngine_" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD504C3EC0C11E70422DC27E /* Debug */,
+				46FC2DF8E9EA54AA79103438 /* Release */,
+				230A33AB51B0879DAAF1E1EB /* Dist */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+};
+rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
