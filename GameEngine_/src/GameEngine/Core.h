@@ -15,8 +15,6 @@
 #else
 	#error Unsupported platform! Currently supports Windows and macOS only.
 #endif
-	#error This is only for Windows!
-#endif
 
 #ifdef GE_ENABLE_ASSERT
 	#define GE_ASSERT(x, ...) { if(!(x)) {GE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }

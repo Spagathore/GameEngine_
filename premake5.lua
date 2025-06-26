@@ -34,7 +34,7 @@ project "GameEngine_"
 		"%{prj.name}/src/**.cpp"
 	}
 
-	sysincludedirs
+	externalincludedirs
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
@@ -43,8 +43,7 @@ project "GameEngine_"
 
 	links
 	{
-		"GLFW",
-		"opengl32.lib"
+		"GLFW"
 	}
 
 	filter "system:windows"
@@ -58,6 +57,11 @@ project "GameEngine_"
 			"GE_BUILD_DLL"
 		}
 
+		links
+		{
+			"opengl32.lib"
+		}
+
 		postbuildcommands
 		{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir .. "/Sandbox")
@@ -65,6 +69,7 @@ project "GameEngine_"
 
 	filter "system:macosx"
 		cppdialect "C++17"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -74,24 +79,50 @@ project "GameEngine_"
 		}
 
 		buildoptions { "-fvisibility=hidden" }
+		pchheader ""
+		pchsource ""
+
+		links
+		{
+			"OpenGL.framework",
+			"Cocoa.framework",
+			"IOKit.framework",
+			"CoreFoundation.framework",
+			"CoreGraphics.framework",
+			"CoreVideo.framework"
+		}
 
 		postbuildcommands
 		{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir .. "/Sandbox")
 		}
 
-	filter "configurations:Debug"
+	filter { "system:windows", "configurations:Debug" }
+		defines "GE_DEBUG"
+		buildoptions "/MDd"
+		symbols "On"
+
+	filter { "system:windows", "configurations:Release" }
+		defines "GE_RELEASE"
+		optimize "On"
+		buildoptions "/MD"
+
+	filter { "system:windows", "configurations:Dist" }
+		defines "GE_DIST"
+		optimize "On"
+		buildoptions "/MD"
+
+	filter { "system:macosx", "configurations:Debug" }
 		defines "GE_DEBUG"
 		symbols "On"
 
-	filter "configurations:Release"
+	filter { "system:macosx", "configurations:Release" }
 		defines "GE_RELEASE"
 		optimize "On"
 
-	filter "configurations:Dist"
+	filter { "system:macosx", "configurations:Dist" }
 		defines "GE_DIST"
 		optimize "On"
-
 
 project "Sandbox"
 	location "Sandbox"
@@ -112,7 +143,7 @@ project "Sandbox"
 		"GameEngine_/src"
 	}
 
-	sysincludedirs
+	externalincludedirs
 	{
 		"GameEngine_/vendor/spdlog/include"
 	}
@@ -134,6 +165,7 @@ project "Sandbox"
 
 	filter "system:macosx"
 		cppdialect "C++17"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -141,14 +173,29 @@ project "Sandbox"
 			"GE_PLATFORM_MACOS"
 		}
 
-	filter "configurations:Debug"
+	filter { "system:windows", "configurations:Debug" }
+		defines "GE_DEBUG"
+		buildoptions "/MDd"
+		symbols "On"
+
+	filter { "system:windows", "configurations:Release" }
+		defines "GE_RELEASE"
+		optimize "On"
+		buildoptions "/MD"
+
+	filter { "system:windows", "configurations:Dist" }
+		defines "GE_DIST"
+		optimize "On"
+		buildoptions "/MD"
+
+	filter { "system:macosx", "configurations:Debug" }
 		defines "GE_DEBUG"
 		symbols "On"
 
-	filter "configurations:Release"
+	filter { "system:macosx", "configurations:Release" }
 		defines "GE_RELEASE"
 		optimize "On"
 
-	filter "configurations:Dist"
+	filter { "system:macosx", "configurations:Dist" }
 		defines "GE_DIST"
 		optimize "On"

@@ -1,6 +1,8 @@
 #include "ge_pch.h"
 #include "WindowsWindow.h"
 
+#ifdef GE_PLATFORM_WINDOWS
+
 namespace GameEngine {
 
     static bool s_GLFWInitialized = false;
@@ -26,7 +28,7 @@ namespace GameEngine {
         m_Data.Width = props.Width;
         m_Data.Height = props.Height;
 
-        GE_CORE_INFO("Creating Window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+        GE_CORE_INFO("Creating Windows Window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
         if (!s_GLFWInitialized)
         {
@@ -68,3 +70,5 @@ namespace GameEngine {
         return m_Data.VSync; 
     }
 }
+
+#endif

@@ -13,7 +13,7 @@
 #include <unordered_set>
 
 
-#include <GameEngine/Log.h>
+#include "GameEngine/Log.h"
 
 #ifdef GE_PLATFORM_WINDOWS
 	#include <Windows.h>
