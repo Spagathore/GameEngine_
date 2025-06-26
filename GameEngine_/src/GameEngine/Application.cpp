@@ -1,8 +1,7 @@
 #include "ge_pch.h"
 #include "Application.h"
 
-#define GL_SILENCE_DEPRECATION
-#include "GLFW/glfw3.h"
+#include <glad/glad.h>
 
 #include "Log.h"
 
