@@ -4,6 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
+#ifdef GE_PLATFORM_WINDOWS
+
 namespace GameEngine {
 
 	class WindowsWindow : public Window
@@ -40,3 +42,5 @@ namespace GameEngine {
 		WindowData m_Data;
 	};
 }
+
+#endif
