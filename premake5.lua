@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameEngine_/vendor/GLFW/include"
+IncludeDir["Glad"] = "GameEngine_/vendor/Glad/include"
 
 include "GameEngine_/vendor/GLFW"
+include "GameEngine_/vendor/Glad"
 
 project "GameEngine_"
 	location "GameEngine_"
@@ -38,11 +40,13 @@ project "GameEngine_"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
+		"Glad",
 		"GLFW"
 	}
 
@@ -54,8 +58,11 @@ project "GameEngine_"
 		defines
 		{
 			"GE_PLATFORM_WINDOWS",
-			"GE_BUILD_DLL"
+			"GE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
+
+		buildoptions { "/utf-8" }
 
 		links
 		{
@@ -75,7 +82,8 @@ project "GameEngine_"
 		defines
 		{
 			"GE_PLATFORM_MACOS",
-			"GE_BUILD_DLL"
+			"GE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		buildoptions { "-fvisibility=hidden" }
@@ -162,6 +170,8 @@ project "Sandbox"
 		{
 			"GE_PLATFORM_WINDOWS"
 		}
+
+		buildoptions { "/utf-8" }
 
 	filter "system:macosx"
 		cppdialect "C++17"
