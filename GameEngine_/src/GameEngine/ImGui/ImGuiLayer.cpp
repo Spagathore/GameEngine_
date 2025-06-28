@@ -157,11 +157,7 @@ namespace GameEngine {
 		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
-		// Note: In ImGui 1.87+, key mapping is handled automatically by the backends
-		// No need to manually set io.KeyMap[] - this was deprecated and removed
-
-		ImGui_ImplOpenGL3_Init();
-		//ImGui_ImplOpenGL3_Init("#version 410");
+		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
 	void ImGuiLayer::OnDetach()

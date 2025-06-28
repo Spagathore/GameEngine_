@@ -16,6 +16,10 @@
 	#error Unsupported platform! Currently supports Windows and macOS only.
 #endif
 
+#ifdef GE_DEBUG
+	#define GE_ENABLE_ASSERT
+#endif
+
 #ifdef GE_ENABLE_ASSERT
 	#define GE_ASSERT(x, ...) { if(!(x)) {GE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define GE_CORE_ASSERT(x, ...) { if (!(x)) { GE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
