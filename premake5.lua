@@ -15,9 +15,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameEngine_/vendor/GLFW/include"
 IncludeDir["Glad"] = "GameEngine_/vendor/Glad/include"
+IncludeDir["ImGui"] = "GameEngine_/vendor/imgui"
 
 include "GameEngine_/vendor/GLFW"
 include "GameEngine_/vendor/Glad"
+include "GameEngine_/vendor/imgui"
 
 project "GameEngine_"
 	location "GameEngine_"
@@ -36,18 +38,20 @@ project "GameEngine_"
 		"%{prj.name}/src/**.cpp"
 	}
 
-	externalincludedirs
+	includedirs
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"Glad",
-		"GLFW"
+		"GLFW",
+		"ImGui"
 	}
 
 	filter "system:windows"
