@@ -16,7 +16,7 @@ public:
     
     void OnEvent(GameEngine::Event& event) override
     {
-        GE_TRACE("{0}", event.ToString());
+        //GE_TRACE("{0}", event.ToString());
     }
 };
 

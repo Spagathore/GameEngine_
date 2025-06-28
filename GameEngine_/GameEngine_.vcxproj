@@ -164,13 +164,15 @@
     <ClInclude Include="src\GameEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\GameEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\GameEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\GameEngine\Input.h" />
     <ClInclude Include="src\GameEngine\Layer.h" />
     <ClInclude Include="src\GameEngine\LayerStack.h" />
     <ClInclude Include="src\GameEngine\Log.h" />
     <ClInclude Include="src\GameEngine\Window.h" />
-    <ClInclude Include="src\Platform\MacOsWindow.h" />
+    <ClInclude Include="src\Platform\MacOs\MacOsWindow.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Platform\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\ge_pch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -179,9 +181,10 @@
     <ClCompile Include="src\GameEngine\Layer.cpp" />
     <ClCompile Include="src\GameEngine\LayerStack.cpp" />
     <ClCompile Include="src\GameEngine\Log.cpp" />
-    <ClCompile Include="src\Platform\MacOsWindow.cpp" />
+    <ClCompile Include="src\Platform\MacOs\MacOsWindow.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\ge_pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
