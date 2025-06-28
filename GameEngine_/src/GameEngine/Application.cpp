@@ -1,7 +1,7 @@
 #include "ge_pch.h"
 #include "Application.h"
 
-#include <glad/glad.h>
+#include "glad/glad.h"
 
 #include "Log.h"
 
