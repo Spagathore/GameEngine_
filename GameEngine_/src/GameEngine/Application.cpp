@@ -4,6 +4,7 @@
 #include "glad/glad.h"
 
 #include "Log.h"
+#include "Input.h"
 
 namespace GameEngine {
 
@@ -66,6 +67,10 @@ namespace GameEngine {
             
             for(Layer* layer : m_LayerStack)
                 layer->OnUpdate();
+
+            auto [x, y] = Input::GetMousePosition();
+            GE_CORE_TRACE("{0}, {1}", x, y);
+            GE_CORE_TRACE("{0}", Input::IsMouseButtonPressed(0));
             
 			m_Window->OnUpdate();
 		}

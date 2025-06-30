@@ -17,9 +17,11 @@ IncludeDir["GLFW"] = "GameEngine_/vendor/GLFW/include"
 IncludeDir["Glad"] = "GameEngine_/vendor/Glad/include"
 IncludeDir["ImGui"] = "GameEngine_/vendor/imgui"
 
-include "GameEngine_/vendor/GLFW"
-include "GameEngine_/vendor/Glad"
-include "GameEngine_/vendor/imgui"
+group "Dependencies"
+	include "GameEngine_/vendor/GLFW"
+	include "GameEngine_/vendor/Glad"
+	include "GameEngine_/vendor/imgui"
+group ""
 
 project "GameEngine_"
 	location "GameEngine_"
@@ -75,7 +77,7 @@ project "GameEngine_"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" ..outputdir .. "/Sandbox/\"")
 		}
 
 	filter "system:macosx"
@@ -111,18 +113,18 @@ project "GameEngine_"
 
 	filter { "system:windows", "configurations:Debug" }
 		defines "GE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter { "system:windows", "configurations:Release" }
 		defines "GE_RELEASE"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 
 	filter { "system:windows", "configurations:Dist" }
 		defines "GE_DIST"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 
 	filter { "system:macosx", "configurations:Debug" }
 		defines "GE_DEBUG"
@@ -189,18 +191,18 @@ project "Sandbox"
 
 	filter { "system:windows", "configurations:Debug" }
 		defines "GE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter { "system:windows", "configurations:Release" }
 		defines "GE_RELEASE"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 
 	filter { "system:windows", "configurations:Dist" }
 		defines "GE_DIST"
 		optimize "On"
-		buildoptions "/MD"
+		runtime "Release"
 
 	filter { "system:macosx", "configurations:Debug" }
 		defines "GE_DEBUG"
